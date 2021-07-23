@@ -51,22 +51,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         title: Text(WelcomeScreen.id),
         backgroundColor: Colors.teal[800],
       ),
-      body: ListView.builder(
-          itemCount: 7,
-          itemBuilder: (BuildContext context, int index) {
-            return ReusableCard(
-              onPress: () {
-                setState(() {
-                  updateColour(Gender.female);
-                });
-              },
-              ad: 'empty',
-              colour: femaleCardColour,
-              cardChild:
-                  IconContent(icon: FontAwesomeIcons.venus, label: "female"),
-            );
-            // This remains unchanged.
-          }),
+      body: ReusableCard(
+        onPress: () {
+          setState(() {
+            updateColour(Gender.female);
+          });
+        },
+        ad: 'empty',
+        colour: femaleCardColour,
+        cardChild: IconContent(icon: FontAwesomeIcons.venus, label: "female"),
+      ),
+      // This remains unchanged.
 
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
