@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // initialRoute: WelcomeScreen.id
-      initialRoute: WelcomeScreen.id,
+      initialRoute: AboutScreen.id,
       routes: {
         WelcomeScreen.id: (context) =>
             WelcomeScreen(title: 'Grow aikidoka home'),

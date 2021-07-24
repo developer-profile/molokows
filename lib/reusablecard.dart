@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 
 class ReusableCard extends StatelessWidget {
   ReusableCard({this.ad, this.colour, this.cardChild, this.onPress});
@@ -25,4 +23,3 @@ class ReusableCard extends StatelessWidget {
     );
   }
 }
-
