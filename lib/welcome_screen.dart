@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:newnavapp/about_screen_copy.dart';
 import 'package:newnavapp/iconContent_class.dart';
 import 'package:newnavapp/reusablecard.dart';
 
@@ -51,23 +52,33 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         title: Text(WelcomeScreen.id),
         backgroundColor: Colors.teal[800],
       ),
-      body: ReusableCard(
-        onPress: () {
-          setState(() {
-            updateColour(Gender.female);
-          });
-        },
-        ad: 'empty',
-        colour: femaleCardColour,
-        cardChild: IconContent(icon: FontAwesomeIcons.venus, label: "female"),
+      body: Column(
+        children: [
+          ReusableCard(
+            onPress: () {
+              setState(() {
+                updateColour(Gender.female);
+              });
+            },
+            ad: 'empty',
+            colour: femaleCardColour,
+            cardChild:
+                IconContent(icon: FontAwesomeIcons.venus, label: "female"),
+          ),
+          ReusableCard(
+            onPress: () {
+              setState(() {
+                Navigator.pushNamed(context, AboutScreen.id);
+              });
+            },
+            cardChild: IconContent(
+                icon: FontAwesomeIcons.youtube, label: "Youtube Link"),
+          ),
+        ],
       ),
       // This remains unchanged.
 
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
